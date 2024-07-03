@@ -14,10 +14,9 @@ func NonPrintable(str string) string {
 	}
 	if strings.Contains(str, "\\t") {
 		str = strings.ReplaceAll(str, "\\t", "    ")
-	}else if strings.Contains(str, "\\b") {
+	}
+	if strings.Contains(str, "\\b") {
 		str = strings.ReplaceAll(str, "\\b", " ")
-	}else if strings.Contains(str, "\\n") {
-		str = strings.ReplaceAll(str, "\\n", "\n")
 	}
 	return str
 }

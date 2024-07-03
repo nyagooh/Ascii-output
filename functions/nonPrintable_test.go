@@ -6,7 +6,7 @@ func TestNonPrintable(t *testing.T) {
 
 	tests := []struct {
 		name string
-		args string
+		line string
 		want string
 	}{
 		{"tab",
@@ -17,14 +17,10 @@ func TestNonPrintable(t *testing.T) {
 			"hello\\bworld",
 			"hello world",
 		},
-		{"newline",
-			"hello\\nworld",
-			"hello\nworld",
-		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := NonPrintable(tt.args); got != tt.want {
+			if got := NonPrintable(tt.line); got != tt.want {
 				t.Errorf("NonPrintable() = %v, want %v", got, tt.want)
 			}
 		})

@@ -2,10 +2,8 @@ package functions
 
 import (
 	"bufio"
-	// "fmt"
 	"log"
 
-	// "fmt"
 	"os"
 )
 

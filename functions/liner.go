@@ -9,14 +9,12 @@ func FndLine(r rune) []int {
 	return lineNumbers
 }
 
-func ProcessLine(line []string) []int {
+func ProcessLine(line string) []int {
 	var result []int
-	for _, values := range line {
-		for _, char := range values {
-			lineNumbers := FndLine(char)
-			result = append(result, lineNumbers...)
+	for _, char := range line {
+		lineNumbers := FndLine(char)
+		result = append(result, lineNumbers...)
 
-		}
 	}
 	return result
 }

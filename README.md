@@ -28,7 +28,7 @@ no such file or directory
 ```
 - It then checks if the input string contains any tabs (\t). If it does, it replaces them with four spaces ( ) eg.
 ```bash
-go run . hello\\tworld
+go run . hello\tworld
  _                                         
 | |                                        
 | |__                           __      __ 
@@ -39,6 +39,22 @@ go run . hello\\tworld
 - It then checks if the input string contains any newlines (\n). If it does,The program splits the input string into individual lines using the newline character (\n). eg.
 ```bash
 go run . h\\nw
+_      
+| |     
+| |__   
+|  _ \  
+| | | | 
+|_| |_| 
+        
+        
+           
+           
+__      __ 
+\ \ /\ / / 
+ \ V  V /  
+  \_/\_/   
+           
+           
 ```
 - For each line, it applies a set of predefined functions to convert each character to its corresponding ASCII art representation. 
 - The program then concatenates the resulting ASCII art representations for each line to form the final output. 
@@ -49,7 +65,7 @@ To install the program from Gitea, follow these steps:
 
 - Clone the repository from Gitea using the provided URL in your terminal.
 ``` bash
-$git clone https://learn.zone01kisumu.ke/git/rogwel/ascii-art
+git clone https://learn.zone01kisumu.ke/git/rogwel/ascii-art
 ```
 Ensure you have Go installed on your system. If not you could follow the link below:
 ```bash
@@ -58,10 +74,10 @@ https://go.dev/doc/install
 Navigate to the project directory using the command:
     
 ```
-$cd ascii-art
+cd FS-Art
 ```
 
-and run the program using ***go run .*** ,input your text  and the banner file you want to use.eg
+and run the program using ***go run  .*** ,input your text  and the banner file you want to use.eg
 ```
 go run . Helloworld standard
 ```
@@ -90,6 +106,13 @@ I hope you've found the information helpful in getting started with our project.
 
 Happy coding!😊
 
-## <span style = "color:#80A4ED">License</span> 
-[license](/home/nymaina/Desktop/fs-art/LICENSE)
+### <span style = "color:#80A4ED">Acknoledgement</span> 
+- [license](/home/nymaina/Desktop/fs-art/LICENSE)
+
+- _*Contributors*_
+   - [Nyagoh](https://github.com/nyagooh)
+   - [Rogwel](https://github.com/anxielray)
+   - [Allan  Kamau](https://github.com/allankamau)
+   
+
 
