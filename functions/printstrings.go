@@ -1,6 +1,8 @@
 package functions
 
-import "fmt"
+import (
+	"strings"
+)
 
 func ProcessString(slice []int, filename string) []string {
 	var results []string
@@ -15,7 +17,7 @@ func ProcessString(slice []int, filename string) []string {
 
 // slice the string into chunks of eight depending on the number of letters passed.And print them
 
-func PrintStrings(str []string) {
+func PrintStrings(str []string) string {
 	chunksize := 8
 	var result [][]string
 	for i := 0; i < len(str); i += chunksize {
@@ -25,17 +27,18 @@ func PrintStrings(str []string) {
 		}
 		result = append(result, str[i:end])
 	}
+	var output strings.Builder
 	for i := 0; i < len(result); {
 		for j := 0; j < 8; {
-			fmt.Print(result[i][j])
+			output.WriteString(result[i][j])
 			i++
 			if i == len(result) {
-				fmt.Println()
+				output.WriteString("\n")
 				j++
 				i = 0
 			}
 		}
 		break
 	}
-
+	return output.String()
 }
