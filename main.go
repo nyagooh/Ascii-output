@@ -12,8 +12,8 @@ import (
 
 func main() {
 	args := os.Args[1:]
-	if len(args) < 1 || len(args) == 3 {
-		fmt.Println("Usage: go run . [STRING] [BANNER]\n\nEX: go run . something standard")
+	if len(args) < 1 || len(args) > 3 {
+		fmt.Println("Usage: go run . [OPTION] [STRING] [BANNER]\n\nEX: go run . --output=<fileName.txt> something standard")
 		return
 	}
 	if args[0] == "" {
@@ -26,12 +26,13 @@ func main() {
 	var banner string
 	var input string
 	var output string
-	if len(args) < 2 && !strings.HasPrefix(args[0], "--output=") {
+	if len(args) == 1 {
 		banner = "standard"
-		output = "output.txt"
-		input = args[0]
-
-	} 
+		// output = "output.txt"
+		input = os.Args[1]
+		fmt.Println(input)
+		os.Exit(0)
+	}
 	if len(args) == 2 && strings.HasSuffix(args[1], ".txt") && !strings.HasPrefix(args[0], "--output=") {
 		new := strings.Trim(args[1], ".txt")
 		banner = strings.ToLower(new)
@@ -49,7 +50,10 @@ func main() {
 			fmt.Println("wrong file Extension: file must have a '.txt' extension")
 		}
 		input = args[1]
-		banner = args[2]
+	}
+	if len(args) == 3 && strings.HasSuffix(args[2], ".txt") {
+		new := strings.Trim(args[2], ".txt")
+		banner = strings.ToLower(new)
 	}
 	if len(output) <= 4 {
 		fmt.Println("The .txt file should be greater that four")

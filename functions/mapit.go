@@ -20,8 +20,9 @@ func Maps(n int, filename string) string {
 	if err != nil {
 		fmt.Println("error calculating the file stat")
 	}
-	if files.Size() != 6623 || files.Size() != 7463 || files.Size() != 5558 {
+	if !(files.Size() == 6623 || files.Size() == 7463 || files.Size() == 5558) {
 		fmt.Println("the files are formatted in a way that they cant be accessed")
+		os.Exit(0)
 	}
 	scanner := bufio.NewScanner(file)
 	var count int
