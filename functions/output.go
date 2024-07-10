@@ -16,7 +16,7 @@ func ProcessFile(banner string, input string) string {
 			result2 := ProcessString(result, filename)
 			str = PrintStrings(result2)
 		} else {
-			fmt.Println("\n")
+			fmt.Println()
 		}
 	}
 	return str

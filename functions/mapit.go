@@ -1,7 +1,6 @@
 package functions
 
 import (
-	"fmt"
 	"bufio"
 	"log"
 	"os"
@@ -22,8 +21,7 @@ func Maps(n int, filename string) string {
 
 	}
 	if !(files.Size() == 6624 || files.Size() == 7463 || files.Size() == 5558) {
-		fmt.Println("the files are formatted in a way that they cant be accessed")
-		os.Exit(1)
+		log.Fatal("the files are formatted in a way that they cant be accessed")
 	}
 	scanner := bufio.NewScanner(file)
 	var count int
